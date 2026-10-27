@@ -5,7 +5,7 @@ public class SolverTests
 {
 
     // ---------- Task 0 ----------
-
+    [TestCase("nATaliA", 23, "Hello! My name is Natalia and i am 23 years old.")]
     [TestCase("John", 24, "Hello! My name is John and i am 24 years old.")]
     [TestCase("Sarah", 13, "Hello! My name is Sarah and i am 13 years old.")]
     [TestCase("alice", 30, "Hello! My name is Alice and i am 30 years old.")]

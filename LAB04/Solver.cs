@@ -24,10 +24,9 @@
         /// </example>
         public static string IntroduceYourself(string name, int age)
         {
-            // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            string formattedName = char.ToUpper(name[0]) + name.Substring(1).ToLower();
+            return $"Hello! My name is {formattedName} and i am {age} years old.";
         }
-
         // =========================
         // Задания по вариантам
         // =========================
@@ -90,7 +89,10 @@
         public static string ConvertSeconds(int seconds)
         {
             // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            int hours = seconds / 3600;
+            int minutes = (seconds % 3600) / 60;
+            int secs = seconds % 60;
+            return $"{seconds} секунд = {hours} ч {minutes} мин {secs} сек";
         }
 
         /// <summary>
@@ -190,8 +192,15 @@
         /// </example>
         public static string GetGradeDescription(int grade)
         {
-            // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            switch (grade)
+            {
+                case 1: return "Оценка 1 - Плохо";
+                case 2: return "Оценка 2 - Неудовлетворительно";
+                case 3: return "Оценка 3 - Удовлетворительно";
+                case 4: return "Оценка 4 - Хорошо";
+                case 5: return "Оценка 5 - Отлично";
+                default: return $"Оценки {grade} не бывает";
+            }
         }
 
         /// <summary>
@@ -289,8 +298,23 @@
         /// </example>
         public static string MaxOdd(int a, int b)
         {
-            // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            if (b < a)
+            {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+
+            for (int i = b; i >= a; i--)
+            {
+            if (i % 2 != 0)
+                {
+                    return $"Максимальное нечётное число в диапазоне [{a}, {b}] = {i}";
+                }
+            }
+
+            return "Нечётных чисел нет";
+
         }
 
         /// <summary>
@@ -388,8 +412,18 @@
         /// </example>
         public static string SumEvenInMatrix(int[,] matrix)
         {
-            // Реализовать метод для решения задачи
-            throw new NotImplementedException();
+            int sum = 0;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (matrix[i, j] % 2 == 0)
+                    {
+                    sum += matrix[i, j];
+                    }
+                }
+            }
+            return $"Сумма четных элементов = {sum}";
         }
 
         /// <summary>
